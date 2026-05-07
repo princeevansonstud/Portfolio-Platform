@@ -15,6 +15,12 @@ export default function App() {
     setProjects([newProject, ...projects]);
   };
 
+
+  const deleteProject = (id) => {
+    setProjects(projects.filter((project) => project.id !== id));
+  };
+
+
   const filteredProjects = projects.filter((p) =>
     p.title.toLowerCase().includes(search.toLowerCase())
   );
@@ -36,7 +42,8 @@ export default function App() {
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-          <ProjectList projects={filteredProjects} />
+
+          <ProjectList projects={filteredProjects} onDelete={deleteProject} />
         </div>
       </div>
     </div>

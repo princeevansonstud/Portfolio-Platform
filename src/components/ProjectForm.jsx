@@ -39,7 +39,7 @@ export default function ProjectForm({ onAdd }) {
                 type="submit"
                 className="px-6 py-2 bg-white border border-black rounded-md hover:bg-green-800 transition-colors font-medium"
             >
-                Add
+                Add Project
             </button>
         </form>
     );
