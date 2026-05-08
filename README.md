@@ -25,8 +25,7 @@ This is a Single-Paged Application that allows users to write down their project
 - Allow the sharing of projects individually without disclosing user privacy.
 - Easy Log-in via Google or GitHub.
 - Implementation of a community page for user-to-user interactions.
-  
-##Licences:
-This webpage is licensed under MIT
+## License:
+This webpage is under the MIT license.
 ## Authors:
 Prince Evanson
