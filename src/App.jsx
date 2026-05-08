@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import ProjectForm from './components/ProjectForm';
 import ProjectList from './components/ProjectList';
 
-// --- FIREBASE CONFIG ---
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc, query, orderBy, where } from 'firebase/firestore';
 import {
@@ -103,11 +102,11 @@ export default function App() {
     <div className="min-h-screen bg-gray-50 text-gray-900 p-4 md:p-12 font-sans">
       <div className="max-w-2xl mx-auto space-y-6">
         <div className="flex justify-between items-center bg-white p-4 rounded-lg border border-black shadow-sm">
-          <h1 className="text-xl font-bold">My Project Catalog</h1>
+          <h1 className="text-xl font-bold">My Project Manager</h1>
           {user && (
             <div className="flex items-center gap-3">
               <span className="text-sm font-medium">{user.email}</span>
-              <button onClick={logout} className="text-sm font-bold text-red-600 hover:underline">Logout</button>
+              <button onClick={logout} className="text-sm font-bold text-black hover:text-red-600 transition-colors">Logout</button>
             </div>
           )}
         </div>
