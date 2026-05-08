@@ -1,10 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react'; // 1. Import useEffect
 import ProjectForm from './components/ProjectForm';
 import ProjectList from './components/ProjectList';
 
 export default function App() {
-  const [projects, setProjects] = useState([]);
+  // 2. Initialize state by checking LocalStorage first
+  const [projects, setProjects] = useState(() => {
+    const savedProjects = localStorage.getItem('projects');
+    return savedProjects ? JSON.parse(savedProjects) : [];
+  });
+
   const [search, setSearch] = useState('');
+
+  // 3. Every time 'projects' changes, save it to LocalStorage
+  useEffect(() => {
+    localStorage.setItem('projects', JSON.stringify(projects));
+  }, [projects]);
 
   const addProject = (title, desc) => {
     const newProject = {
@@ -15,11 +25,9 @@ export default function App() {
     setProjects([newProject, ...projects]);
   };
 
-
   const deleteProject = (id) => {
     setProjects(projects.filter((project) => project.id !== id));
   };
-
 
   const filteredProjects = projects.filter((p) =>
     p.title.toLowerCase().includes(search.toLowerCase())
@@ -42,7 +50,6 @@ export default function App() {
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-
           <ProjectList projects={filteredProjects} onDelete={deleteProject} />
         </div>
       </div>
