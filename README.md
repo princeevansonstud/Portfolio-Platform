@@ -24,7 +24,8 @@ This is a Single-Paged Application that allows users to write down their project
 ## Future Plans:
 - Allow the sharing of projects individually without disclosing user privacy.
 - Easy Log-in via Google or GitHub.
-- Implementation of a community page for user-to-user interactions
+- Implementation of a community page for user-to-user interactions.
+  
 ##Licences:
 This webpage is licensed under MIT
 ## Authors:
